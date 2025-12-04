@@ -52,15 +52,15 @@ export default function TextForm(props) {
             color: props.mode==='dark'?'white':'#042743' }} 
           id="myBox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleclearClick}>Clear Text</button>
-        <button className="btn btn-primary mx-1" onClick={handlecopy}>Copy Text</button>
-        <button className="btn btn-primary mx-1" onClick={handleExtraSpace}>Remove Extra Spaces</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLoClick}>Convert to Lowercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleclearClick}>Clear Text</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handlecopy}>Copy Text</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpace}>Remove Extra Spaces</button>
      </div> 
      <div className="container my-3" style={{color: props.mode==='dark'?'white':'#042743' }}>
         <h2>Your text summary</h2>   
-        <p>{text.split(" ").length} Words, {text.length} Characters</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words, {text.length} Characters</p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in the textbox above to preview it here"}</p>
